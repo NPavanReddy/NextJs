@@ -1,3 +1,5 @@
+import { Fragment } from "react/cjs/react.production.min";
+import Head from "next/head";
 import MeetupList from "../components/meetups/MeetupList";
 
 const DUMMY_MEETUPS = [
@@ -20,7 +22,18 @@ const DUMMY_MEETUPS = [
 ];
 
 function HomePage() {
-  return <MeetupList meetups={DUMMY_MEETUPS} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>Recat Meetup</title>
+        <meta
+          name="description"
+          content="Browse a huge list of highly active React meetups!"
+        />
+      </Head>
+      <MeetupList meetups={DUMMY_MEETUPS} />;
+    </Fragment>
+  );
 }
 
 export default HomePage;
